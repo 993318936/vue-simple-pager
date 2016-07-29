@@ -19,24 +19,24 @@
 <script>
     export default {
         props: {
-            totalPage: { // 总页数
+            totalPage: {
                 type: Number,
                 default: 1,
                 required: true
             },
-            showItems: { // 显示出来的页数，如: 1 ... 34[5]67 ... 10
+            showItems: {
                 type: Number,
                 default: 5
             },
-            showPrev: { // 是否显示“上一页”
+            showPrev: {
                 type: Boolean,
                 default: true
             },
-            showNext: { // 是否显示“下一页”
+            showNext: {
                 type: Boolean,
                 default: true
             },
-            showJump: { // 是否显示“跳转”
+            showJump: {
                 type: Boolean,
                 default: true
             },
