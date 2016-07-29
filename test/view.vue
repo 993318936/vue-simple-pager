@@ -19,7 +19,7 @@
         <h1>pager used for params</h2>
         <pager
         mode="params"
-        route-name="params"
+        route-name="pageRoute"
         :total-page="totalPage"
         :init-page="paramsPage"></pager>
     </div>

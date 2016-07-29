@@ -17,7 +17,7 @@ router.map({
         component: view
     },
     '/page/:page': {
-        name: 'params',
+        name: 'pageRoute',
         component: view
     }
 })

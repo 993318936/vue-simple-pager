@@ -1,15 +1,16 @@
-# vue-pager
-an all-round  pagination component based on vue
+# vue-simple-pager
+an all-round pagination component based on `vue`
 # Test
 ```
 npm install .
 npm run test
+open your browser and request http://localhost:8080/test/test.html
 ```
 # Usage
 ```
 npm install vue-simple-pager
 ```
-## for simple use, you only need transfer props as follow:
+## for simple usage, you only need transfer props as follow:
 ```
 props: {
     totalPage: { // total 
@@ -75,11 +76,11 @@ new Vue({
 })
 ```
 ## for more usage: 
-When using vue-router, usually there is a need that different page can be put in history so that we can navigate them by using browser [go,back] button. 
+When using `vue-router`, usually there is a need that different page can be put in history so that we can navigate them by using browser `[go,back]` buttons. 
 Now you only need to add two props: 
 ```
 {
-    mode: { // supported 3 modes: 'event' | 'query' | 'params'
+    mode: { // 3 modes are supported : 'event' | 'query' | 'params'
         type: String,
         default: 'event'
     },
@@ -88,5 +89,6 @@ Now you only need to add two props:
     }
 }
 ```
+For more usage detail, see the test example
 # License
 MIT
