@@ -77,6 +77,7 @@ new Vue({
 ## for more usage: 
 When using vue-router, usually there is a need that different page can be put in history so that we can navigate them by using browser [go,back] button. 
 Now you only need to add two props: 
+```
 {
     mode: { // supported 3 modes: 'event' | 'query' | 'params'
         type: String,
