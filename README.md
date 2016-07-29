@@ -2,6 +2,8 @@
 an all-round pagination component based on `vue`
 # Test
 ```
+clone this repo
+cd vue-simple-pager
 npm install .
 npm run test
 open your browser and request http://localhost:8080/test/test.html
