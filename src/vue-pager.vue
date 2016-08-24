@@ -1,42 +1,46 @@
 <template>
     <div class="pager-wrapper" v-if="totalPage > 0">
         <div class="pager-pages">
-            <a v-show="currentPage > 1 && showPrev" @click="go(currentPage - 1)">{{language[lang].prev}}</a>
+            <a v-show="currentPage > 1 && showPrev" @click="go(currentPage - 1)">上一页</a>
             <a :class="{active: currentPage == 1 ? true : false}" @click="go(1)">1</a>
             <strong v-show="pages[0] > 2">...</strong>
             <a v-for="page in pages" :class="{active: currentPage == page ? true : false}" @click="go(page)">{{page}}</a>
             <strong v-show="pages[pages.length-1] < totalPage - 1">...</strong>
             <a v-if="totalPage > 1" :class="{active: currentPage == totalPage ? true : false}" @click="go(totalPage)">{{totalPage}}</a>
-            <a v-show="currentPage < totalPage && showNext" @click="go(currentPage + 1)">{{language[lang].next}}</a>
+            <a v-show="currentPage < totalPage && showNext" @click="go(currentPage + 1)">下一页</a>
         </div>
         <div v-if="showJump" v-show="totalPage > 1" class="pager-jump">
-            <span>{{language[lang].goTo}}</span>
+            <span>共<em class="jump-total">{{totalPage}}</em>页 ，跳至</span>
             <input type="number" min="1" :max="totalPage" v-model="jumpPage" class="jump-input">
-            <a @click="go(jumpPage)">{{language[lang].go}}</a>
+            <span>页</span>
+            <a @click="go(jumpPage)">确定</a>
         </div>
     </div>
 </template>
 <script>
+    /*
+     * component pager 翻页页码组件
+     */
     export default {
         props: {
-            totalPage: {
+            totalPage: { // 总页数
                 type: Number,
                 default: 1,
                 required: true
             },
-            showItems: {
+            showItems: { // 显示出来的页数，如: 1 ... 34[5]67 ... 10
                 type: Number,
                 default: 5
             },
-            showPrev: {
+            showPrev: { // 是否显示“上一页”
                 type: Boolean,
                 default: true
             },
-            showNext: {
+            showNext: { // 是否显示“下一页”
                 type: Boolean,
                 default: true
             },
-            showJump: {
+            showJump: { // 是否显示“跳转”
                 type: Boolean,
                 default: true
             },
@@ -50,10 +54,6 @@
             },
             routeName: {
                 type: String
-            },
-            lang: {
-                type: String,
-                default: 'en'
             }
         },
         data () {
@@ -61,31 +61,23 @@
                 currentPage: 0,
                 pages: [],
                 jumpPage: 0,
-                language: {
-                    en: {
-                        prev: 'Prev',
-                        next: 'Next',
-                        goTo: 'go to',
-                        go: 'Go'
-                    },
-                    zh: {
-                        prev: '上一页',
-                        next: '下一页',
-                        goTo: '跳至',
-                        go: '确定'
-                    }
-                }
             }
         },
         created () {
             this.currentPage = this.initPage
             if(this.mode == 'params' && !this.routeName) {
-                throw 'need a route name when choose params mode in vue-simple-pager component'
+                throw 'need a route name when choose params mode in pager component'
             }
         },
         computed: {
             pages () {
                 let getPages = (start,end) => {
+                    if(start <= 1 || start > end || start >= this.totalPage) {
+                        start = 2
+                    }
+                    if(end >= this.totalPage || end < start || end <= 1) {
+                        end = this.totalPage - 1
+                    }
                     let arr = []
                     for(let i = start; i <= end; i++) {
                         arr.push(i)
