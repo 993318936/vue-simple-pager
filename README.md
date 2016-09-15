@@ -8,6 +8,8 @@ npm install .
 npm run test
 open your browser and request http://localhost:8080/test/test.html
 ```
+![/images/vue-simple-pager.gif](/images/vue-simple-pager.gif)
+
 # Usage
 ```
 npm install vue-simple-pager
@@ -39,10 +41,6 @@ props: {
     initPage: { // initial page
         type: Number,
         default: 1
-    },
-    lang: { // language, supported 'en' for English and 'zh' for Chinese
-        type: String,
-        default: 'en'
     }
 ```
 when page changed, it will emit an event named 'go-page', so in your template: 

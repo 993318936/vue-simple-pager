@@ -1,6 +1,6 @@
 {
   "name": "vue-simple-pager",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "a pagination component based on vue",
   "main": "src/vue-pager.vue",
   "scripts": {
