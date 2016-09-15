@@ -57,11 +57,6 @@
                     this.queryPage = 1
                 }
             }
-        },
-        ready () {
-            setTimeout(() => {
-                this.eventPage = 3
-            },3000)
         }
     }
 </script>

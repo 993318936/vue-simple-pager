@@ -59,7 +59,6 @@
         data () {
             return {
                 currentPage: 0,
-                pages: [],
                 jumpPage: 0,
             }
         },
