@@ -58,27 +58,27 @@
             textPrevious: {
                 type: String,
                 default: "上一页"
-              },
-              textNext: {
+            },
+            textNext: {
                 type: String,
                 default: "下一页"
-              },
-              textPage: {
+            },
+            textPage: {
                 type: String,
                 default: "页"
-              },
-              textTotal: {
+            },
+            textTotal: {
                 type: String,
                 default: "共"
-              },
-              textSet: {
+            },
+            textSet: {
                 type: String,
                 default: "确定"
-              },
-              textJump: {
+            },
+            textJump: {
                 type: String,
                 default: "页 ，跳至"
-              }
+            }
         },
         data () {
             return {
