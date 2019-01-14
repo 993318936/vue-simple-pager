@@ -175,6 +175,9 @@
         height: 32px;
         font-size: 0;
     }
+    .pager-pages a:not(.active), .pager-jump a {
+      cursor: pointer;
+    }
     .pager-wrapper a,
     .pager-wrapper strong {
         display: inline-block;
