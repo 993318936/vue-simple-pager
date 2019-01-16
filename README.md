@@ -41,6 +41,31 @@ props: {
     initPage: { // initial page
         type: Number,
         default: 1
+    },
+    // these are used for translations
+    textPrevious: {
+        type: String,
+        default: "上一页"
+    },
+    textNext: {
+        type: String,
+        default: "下一页"
+    },
+    textPage: {
+        type: String,
+        default: "页"
+    },
+    textTotal: {
+        type: String,
+        default: "共"
+    },
+    textSet: {
+        type: String,
+        default: "确定"
+    },
+    textJump: {
+        type: String,
+        default: "页 ，跳至"
     }
 ```
 when page changed, it will emit an event named 'go-page', so in your template: 
